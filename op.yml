@@ -18,7 +18,7 @@ name: github.com/opspec-pkgs/object.keys.apply-casing
 opspec: 0.1.6
 run:
   container:
-    image: { ref: 'node:12.1.0-alpine'}
+    image: { ref: 'opspecpkgs/object.keys.apply-casing:1.0.0'}
     cmd:
       - node
       - /cmd.js
