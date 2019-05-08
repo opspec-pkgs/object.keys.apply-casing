@@ -1,0 +1,30 @@
+description: applies casing to keys of an object
+inputs:
+  object:
+    object:
+      description: object to apply key casing to
+  casing:
+    string:
+      constraints:
+        enum:
+          - camel
+          - kebab
+          - snake
+outputs:
+  object:
+    object:
+      description: object w/ key casing applied
+name: github.com/opspec-pkgs/object.keys.apply-casing
+opspec: 0.1.6
+run:
+  container:
+    image: { ref: 'node:12.1.0-alpine'}
+    cmd:
+      - node
+      - /cmd.js
+    envVars:
+      casing:
+    files:
+      /cmd.js:
+      /object.json: $(object)
+version: 1.0.0
